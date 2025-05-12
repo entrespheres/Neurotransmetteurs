@@ -227,8 +227,14 @@ form.addEventListener('submit', function(event) {
       });
     }
   });
-  const scoreTotal = document.getElementById('scoreTotal').textContent;
+
+  const scoreTotal = parseInt(document.getElementById('scoreTotal').textContent);
   summary += `\nScore total : ${scoreTotal}`;
+
+  if (scoreTotal > 16) {
+    summary += `\n⚠️ Indication : Stress chronique ou/et carences avérées`;
+  }
+
   document.getElementById('summaryField').value = summary;
 
   // Confirmation (facultative)
