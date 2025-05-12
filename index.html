@@ -210,6 +210,15 @@ form.addEventListener('change', () => {
     total += score;
   });
   document.getElementById('scoreTotal').textContent = total;
+
+  // Afficher ou masquer le message sous le score total
+  const dnsMessage = document.getElementById('dnsMessage');
+  if (total > 16) {
+    dnsMessage.textContent = "Stress chronique ou/et carences avérées";
+  } else {
+    dnsMessage.textContent = "";
+  }
+
   updateProgress();
 });
 
