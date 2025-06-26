@@ -117,10 +117,10 @@
 
   <div id="categories"></div>
 
-<div class="card">
-  <div class="score">Score Total D.N.S. : <span id="scoreTotal">0</span></div>
-  <div id="dnsMessage" style="margin-top: 10px; color: red; font-weight: bold;"></div>
-</div>
+  <div class="card">
+    <div class="score">Score Total D.N.S. : <span id="scoreTotal">0</span></div>
+    <div id="dnsMessage" style="margin-top: 10px; color: red; font-weight: bold;"></div>
+  </div>
 
   <div class="card">
     <label>Votre email :
@@ -224,6 +224,9 @@ form.addEventListener('change', () => {
 });
 
 form.addEventListener('submit', function(event) {
+  // Facultatif : laisser la soumission à Formspree, mais afficher le message directement
+  // event.preventDefault(); // Décommenter si tu veux empêcher la redirection Formspree
+
   let summary = '';
   Object.keys(categoriesData).forEach(cat => {
     const selects = form.querySelectorAll(`select[name="${cat}"]`);
@@ -247,10 +250,11 @@ form.addEventListener('submit', function(event) {
 
   document.getElementById('summaryField').value = summary;
 
-  // Confirmation (facultative)
+  // Message de confirmation pour l'utilisateur
   setTimeout(() => {
-  alert("Merci d'avoir rempli ce questionnaire, vous recevrez un email avec vos résultats.");
-}, 200);
+    alert("Merci d'avoir rempli ce questionnaire, vous recevrez un email avec vos résultats.");
+  }, 200);
+});
 </script>
 
 </body>
