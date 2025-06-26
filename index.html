@@ -248,8 +248,9 @@ form.addEventListener('submit', function(event) {
   document.getElementById('summaryField').value = summary;
 
   // Confirmation (facultative)
-  setTimeout(() => alert("Merci ! Vos réponses ont bien été envoyées."), 200);
-});
+  setTimeout(() => {
+  alert("Merci d'avoir rempli ce questionnaire, vous recevrez un email avec vos résultats.");
+}, 200);
 </script>
 
 </body>
